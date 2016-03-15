@@ -28,7 +28,7 @@ script:
   - cp bin/libaxtls.a $ESP8266_ARDUINO_DIR/tools/sdk/lib/libaxtls.a
   - echo "dir"
   - ls $ESP8266_ARDUINO_DIR/libraries/ESP8266WiFi/
-  # Try building examples in ESP8266WiFi library from the ESP8266 Arduino core
+  # Try building examples in ESP8266WiFi library from the ESP8266 Arduino cores
   - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_1.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :1 -ac -screen 0 1280x1024x16
   - sleep 3
   - export DISPLAY=:1.0
