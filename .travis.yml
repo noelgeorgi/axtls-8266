@@ -21,10 +21,13 @@ script:
   - python get.py
   - export PATH="$PATH:$PWD/xtensa-lx106-elf/bin"
   # Build axTLS
+  - echo $TRAVIS_BUILD_DIR
   - cd $TRAVIS_BUILD_DIR
   - make
   # Copy the library into Arduino core
   - cp bin/libaxtls.a $ESP8266_ARDUINO_DIR/tools/sdk/lib/libaxtls.a
+  - echo "dir"
+  - ls $ESP8266_ARDUINO_DIR/libraries/ESP8266WiFi/
   # Try building examples in ESP8266WiFi library from the ESP8266 Arduino core
   - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_1.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :1 -ac -screen 0 1280x1024x16
   - sleep 3
