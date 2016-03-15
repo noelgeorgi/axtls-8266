@@ -537,7 +537,7 @@ SSL *ssl_new(SSL_CTX *ssl_ctx, int client_fd)
 {
     SSL *ssl = (SSL *)calloc(1, sizeof(SSL));
     ssl->ssl_ctx = ssl_ctx;
-    ssl->max_plain_length = 1460*4;
+    ssl->max_plain_length = 1460*6;
     ssl->bm_all_data = (uint8_t*) calloc(1, ssl->max_plain_length + RT_EXTRA);
     ssl->need_bytes = SSL_RECORD_SIZE;      /* need a record */
     ssl->client_fd = client_fd;
