@@ -24,6 +24,7 @@ script:
   - make
   # Copy the library into Arduino core
   - cp bin/libaxtls.a $ESP8266_ARDUINO_DIR/tools/sdk/lib/libaxtls.a
+  - cp bin/libaxtls.a $TRAVIS_BUILD_DIR
   # Try building examples in ESP8266WiFi library from the ESP8266 Arduino core
 #  - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_1.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :1 -ac -screen 0 1280x1024x16
 #  - sleep 3
